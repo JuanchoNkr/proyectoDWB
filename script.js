@@ -28,7 +28,10 @@ li.classList.add("completed");
 }
 
 li.innerHTML = `
-<span onclick="toggleTask(${index})">${task.text}</span>
+<input type="checkbox" ${task.completed ? "checked" : ""} onchange="toggleTask(${index})">
+
+<span>${task.text}</span>
+
 <button class="delete-btn" onclick="deleteTask(${index})">X</button>
 `;
 
